@@ -5,65 +5,24 @@
   src: url("fonts/1.otf") format("truetype");
 }
 
-@keyframes scroll-reveal {
-    to {
-        background-size: 100% 100%;
-    }
-}
-
-
-@keyframes appear {
-    0% {
-        filter: blur(20px);
-    }
-
-    20% {
-        filter: blur(0px);
-    }
-
-    80% {
-        filter: blur(0px);
-    }
-
-    100% {
-        filter: blur(20px);
-    }
-}
-
-@media (min-width:1000px){
-    @keyframes appear {
-        0% {
-            filter: blur(20px);
-        }
-    
-        30% {
-            filter: blur(0px);
-        }
-    
-        75% {
-            filter: blur(0px);
-        }
-    
-        100% {
-            filter: blur(20px);
-        }
-    }
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   user-select: none;
+  -webkit-user-select: none;
 }
 
 html {
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body{
     font-family: "Hedvig Letters Serif", serif;
     letter-spacing: -.04em;
+    line-height: 1.25;
     overflow-x: hidden;
 }
 
@@ -79,11 +38,13 @@ nav{
     align-items: center;
     width: 100vw;
     padding: 15px 30px;
-    /* background-color: rgba(255, 255, 255, 0.2); */
-    opacity: 0;   
     font-size: 18px;
-    line-height: 1.25;
-    letter-spacing: -.04em;
+    opacity: 0;
+}
+
+nav a{
+    text-decoration: none;
+    color: black;
 }
 
 nav ul{
@@ -105,7 +66,6 @@ nav ul li a{
     }
 } */
 
-
 .homepage{
     display: flex;
     justify-content: flex-start;
@@ -116,17 +76,24 @@ nav ul li a{
 
 .homepage .homepage-content{
     flex: 1;
-    width: 100vw;
-
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100vw;
 }
 
-
-.homepage .homepage-content ul{
+.homepage-content ul{
     display: none;
+    list-style: none;
+    font-size: 1.6em;
+    padding: 30px;
+    transform: translateX(-150px);
 }
+
+.homepage-content ul a{
+    color: black;
+    text-decoration: underline;
+}    
 
 .homepage .title-name{
     font-family: "Custom";
@@ -156,48 +123,35 @@ nav ul li a{
 }
 
 .homepage-footer ul li a{
-    text-decoration: none;
+    text-decoration: underline;
     color: black;
     padding: 0 0 0 5px;
 }
-
 
 @media (max-width:1500px){
     .homepage-footer ul{
         display: none;
     }
     
+    .homepage-content ul{
+        display: block;
+    }
+
     .homepage-content .title-name{
         font-size: 80px;
         text-wrap: nowrap;
         rotate: -90deg;
     }
-
-    .homepage .homepage-content ul{
-        display: block;
-        list-style: none;
-        font-size: 1.6em;
-        padding: 30px;
-        transform: translateX(-150px);
-    }
-
-    .homepage .homepage-content ul a{
-        color: black;
-        text-decoration: none;
-    }    
 }
-
 
 .title{
     font-size: 2.5em;
     font-weight: bold;
-    /* width: 100vw; */
     padding-left: 40px;
     max-width: 100vw;
     width: 900px;
     padding-top: 100px;
 }
-
 
 .about{
     height: 100svh;
@@ -206,11 +160,7 @@ nav ul li a{
     align-items: center;
     flex-direction: column;
     width: 100vw;
-    animation: appear linear forwards;
-    animation-timeline: view();
-    animation-range: cover;
 }
-
 
 .about p{
     max-width: 100vw;
@@ -225,23 +175,13 @@ nav ul li a{
     background-repeat: no-repeat;
     background-size: 0% 100%;
     background-image: linear-gradient(90deg,black, black);
-    animation: scroll-reveal linear forwards;
-    animation-timeline: view();
-    animation-range: contain -300px 100vh;
 }
 
-
 @media (max-width: 1000px){
-    .about p span{
-        animation-range: contain -300px 120vh;
-
-    }
-    
     .about p{
         font-size: 1.4em;
     }
 }
-
 
 .projects{
     display: flex;
@@ -251,11 +191,8 @@ nav ul li a{
     flex-direction: column;
     width: 100vw;
     max-width: 100vw;
-    animation: appear linear forwards;
-    animation-timeline: view();
-    animation-range: cover;
+    padding-bottom: 100px;
 }
-
 
 .projects-container{
     display: flex;
@@ -266,7 +203,7 @@ nav ul li a{
     max-width: 90vw;
     padding: 20px;
     border-radius: 10px;
-    border: 2px dashed black;
+    border: 1px dashed black;
 }
 
 .projects-container img{
@@ -325,18 +262,13 @@ nav ul li a{
     }
 }
 
-
-
 .mail{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 100vw;
-    padding: 200px 50px 50px 50px;
-    animation: appear linear forwards;
-    animation-timeline: view();
-    animation-range: cover 200px;
+    padding: 100px 50px 50px 50px;
 }
 
 .mail p{
@@ -349,12 +281,11 @@ nav ul li a{
 .mail a{
     font-size: 2.3em;
     padding: 20px;
-    text-decoration: none;
     color: black;
     text-decoration: underline;
 }
 
-.footer{
+.contact{
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -362,7 +293,7 @@ nav ul li a{
     height: 100svh;
 }
 
-.footer .footer-content{
+.contact .contact-content{
     flex: 1;
     width: 100vw;
 
@@ -372,16 +303,16 @@ nav ul li a{
 }
 
 
-.footer .footer-content ul{
+.contact .contact-content ul{
     display: none;
 }
 
-.footer .title-name{
+.contact .title-name{
     font-family: "Custom";
     font-size: 200px;
 }
 
-.footer-footer{
+.contact-footer{
     flex: 0 0 auto;
     display: flex;
     justify-content: space-between;
@@ -391,11 +322,11 @@ nav ul li a{
     font-size: 1.3em;
 }
 
-.footer-footer .right{
+.contact-footer .right{
     text-align: right;
 }
 
-.footer-footer ul{
+.contact-footer ul{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -403,25 +334,25 @@ nav ul li a{
     padding-right: 40px;
 }
 
-.footer-footer ul li a{
-    text-decoration: none;
+.contact-footer ul li a{
+    text-decoration: underline;
     color: black;
     padding: 0 0 0 5px;
 }
 
 
 @media (max-width:1500px){
-    .footer-footer ul{
+    .contact-footer ul{
         display: none;
     }
     
-    .footer-content .title-name{
+    .contact-content .title-name{
         font-size: 80px;
         text-wrap: nowrap;
         rotate: -90deg;
     }
 
-    .footer .footer-content ul{
+    .contact .contact-content ul{
         display: block;
         list-style: none;
         font-size: 1.6em;
@@ -429,12 +360,12 @@ nav ul li a{
         transform: translateX(-150px);
     }
 
-    .footer .footer-content ul a{
+    .contact .contact-content ul a{
         color: black;
-        text-decoration: none;
+        text-decoration: underline;
     }    
 
-    .footer-footer{
+    .contact-footer{
         font-size: 0.9em;
     }
 
@@ -447,7 +378,6 @@ nav ul li a{
     .mail a{
         font-size: 1.6em;
         padding: 20px;
-        text-decoration: none;
         color: black;
         text-decoration: underline;
     }

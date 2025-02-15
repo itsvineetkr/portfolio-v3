@@ -13,7 +13,7 @@
 <body>
     <header>
         <nav>
-            <div class="name">Vineet Kumar</div>
+            <a href="#homepage" class="name">Vineet Kumar</a>
             <ul>
                 <li><a href="#about">about,</a></li>
                 <li><a href="#projects">projects,</a></li>
@@ -21,7 +21,7 @@
             </ul>
         </nav>
     </header>
-    <div class="homepage">
+    <section class="homepage" id="homepage">
         <div class="homepage-content">
             <div class="title-name">    
                 Vineet Kumar
@@ -45,23 +45,21 @@
                 currently at <br> Tensor Search
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="about" id="about">
+    <section class="about" id="about">
         <div class="title">
             about
         </div>
         <p>
             <span>
-                Pursuing B.Tech in Computer Science and Technology with a specialization in AI from IET Lucknow.
-                Passionate about leveraging technology to solve real-world problems. Proficient in Python with a focus on Data Structures and Algorithms also currently expanding skills in web development.
-                Eager to contribute to innovative projects 
+                I'm a Computer Science and Engineering student pursuing my bachelor's at IET Lucknow with a strong interest in AI, software development, and problem-solving. I enjoy exploring Generative AI, Web Development, Machine Learning, and API development while continuously learning and refining my skills. Currently, I'm gaining hands-on experience as a Data Science Intern at Tensor Solution while freelancing.
             </span>
         </p>
-    </div>
+    </section>
 
 
-    <div class="projects" id="projects">
+    <section class="projects" id="projects">
         <div class="title">
             projects
         </div>
@@ -133,7 +131,7 @@
             </div>
             <img src="images/project4.png" alt="">
         </div>
-    </div>
+    </section>
 
     <footer>
         <div class="mail" id="contact">
@@ -141,8 +139,8 @@
             <a href="mailto:itsvineetkr@gmail.com">itsvineetkr@gmail.com</a>
         </div>
 
-        <div class="footer">
-            <div class="footer-content">
+        <div class="contact">
+            <div class="contact-content">
                 <div class="title-name">    
                     Vineet Kumar
                 </div>
@@ -152,7 +150,7 @@
                     <li><a href="https://www.instagram.com/vineetkumar.ind" target="_blank">instagram</a></li>
                 </ul>
             </div>
-            <div class="footer-footer">
+            <div class="contact-footer">
                 <div class="left">
                     2025 &copy; made by Vineet
                 </div>
@@ -167,30 +165,7 @@
             </div>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
-
-<script>
-    const homepage = document.querySelector('.homepage');
-    const about = document.querySelector('.about');
-    const nav = document.querySelector('nav');
-    const name = document.querySelector('nav .name');
-
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 0 && window.scrollY < 600) {
-            homepage.style.filter = `blur(${window.scrollY / 150 * 2}px)`;
-        } 
-
-        if (window.scrollY > 100){
-            nav.style.opacity = ((window.scrollY-100)/100 * 12.5)+"%";
-            
-        }else{
-            nav.style.opacity = 0;
-        }
-        
-    });
-
-
-
-</script>
-
 </html>
