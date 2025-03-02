@@ -5,6 +5,16 @@
   src: url("fonts/1.otf") format("truetype");
 }
 
+
+:root {
+    --background-color: white;
+    --text-color: black;
+    --link-color: black;
+    --border-color: black;
+    --about-color: hsla(0, 0%, 0%, 0.274);
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -24,7 +34,14 @@ body{
     letter-spacing: -.04em;
     line-height: 1.25;
     overflow-x: hidden;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
+
+body a{
+    color: var(--link-color);
+}
+
 
 header{
     position: fixed;
@@ -44,7 +61,6 @@ nav{
 
 nav a{
     text-decoration: none;
-    color: black;
 }
 
 nav ul{
@@ -56,7 +72,6 @@ nav ul{
 
 nav ul li a{
     text-decoration: none;
-    color: black;
     padding: 0 0 0 5px;
 }
 
@@ -91,7 +106,6 @@ nav ul li a{
 }
 
 .homepage-content ul a{
-    color: black;
     text-decoration: underline;
 }    
 
@@ -124,7 +138,6 @@ nav ul li a{
 
 .homepage-footer ul li a{
     text-decoration: underline;
-    color: black;
     padding: 0 0 0 5px;
 }
 
@@ -170,11 +183,11 @@ nav ul li a{
 }
 
 .about p span{
-    color: hsla(0, 0%, 0%, 0.274);
+    color: var(--about-color);
     background-clip: text;
     background-repeat: no-repeat;
     background-size: 0% 100%;
-    background-image: linear-gradient(90deg,black, black);
+    background-image: linear-gradient(90deg, var(--text-color), var(--text-color));
 }
 
 @media (max-width: 1000px){
@@ -202,8 +215,8 @@ nav ul li a{
     width: 900px;
     max-width: 90vw;
     padding: 20px;
-    border-radius: 10px;
-    border: 1px dashed black;
+    border-radius: 15px;
+    border: 1px dashed var(--border-color);
 }
 
 .projects-container img{
@@ -211,7 +224,7 @@ nav ul li a{
     max-width: 85vw;
     border-radius: 15px;
     padding: 5px;
-    border: 1px dashed black;
+    border: 1px dashed var(--border-color);
     z-index: 0;
 }
 
@@ -248,7 +261,6 @@ nav ul li a{
 .projects-container .text .links a{
     font-size: 1em;
     text-decoration: underline;
-    color: black;
 }
 
 @media (max-width: 1000px){
@@ -281,7 +293,6 @@ nav ul li a{
 .mail a{
     font-size: 2.3em;
     padding: 20px;
-    color: black;
     text-decoration: underline;
 }
 
@@ -336,7 +347,6 @@ nav ul li a{
 
 .contact-footer ul li a{
     text-decoration: underline;
-    color: black;
     padding: 0 0 0 5px;
 }
 
@@ -361,7 +371,6 @@ nav ul li a{
     }
 
     .contact .contact-content ul a{
-        color: black;
         text-decoration: underline;
     }    
 
@@ -378,7 +387,7 @@ nav ul li a{
     .mail a{
         font-size: 1.6em;
         padding: 20px;
-        color: black;
+
         text-decoration: underline;
     }
 }

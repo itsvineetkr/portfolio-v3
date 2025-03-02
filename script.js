@@ -23,6 +23,8 @@ const y_projects = projectsRect.bottom + window.scrollY
 const x_contact = contactRect.top + window.scrollY
 const y_contact = contactRect.bottom + window.scrollY
 
+const theme = document.querySelectorAll('.theme');
+
 function fade(element, percent, blur, x, y){
     const p = percent
     const c = blur
@@ -68,3 +70,28 @@ window.addEventListener('scroll', () => {
     aboutSpan.style.backgroundSize = b+"%"+ " 100%";
 });
 
+
+theme.forEach(button => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (button.innerHTML == "light"){
+            theme.forEach(button => {
+                button.innerHTML = "dark";    
+            });
+            document.documentElement.style.setProperty('--background-color', '#181a1b');
+            document.documentElement.style.setProperty('--text-color', 'white');
+            document.documentElement.style.setProperty('--link-color', 'white');
+            document.documentElement.style.setProperty('--border-color', '#776e62');
+            document.documentElement.style.setProperty('--about-color', 'hsla(0, 0%, 100%, 0.274)');
+        } else {
+            theme.forEach(button => {
+                button.innerHTML = "light";    
+            });
+            document.documentElement.style.setProperty('--background-color', 'white');
+            document.documentElement.style.setProperty('--text-color', 'black');
+            document.documentElement.style.setProperty('--link-color', 'black');
+            document.documentElement.style.setProperty('--border-color', 'black');
+            document.documentElement.style.setProperty('--about-color', 'hsla(0, 0%, 0%, 0.274)');
+        }
+    });
+});
