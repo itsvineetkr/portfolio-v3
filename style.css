@@ -155,7 +155,14 @@ nav ul li a {
     padding: 0 0 0 5px;
 }
 
-@media (max-width:1500px) {
+@media (max-width:1300px) {
+    .homepage-content .title-name {
+        font-size: 150px;
+        text-wrap: nowrap;
+    }
+}
+
+@media (max-width:1000px) {
     .homepage-footer ul {
         display: none;
     }
@@ -170,6 +177,7 @@ nav ul li a {
         rotate: -90deg;
     }
 }
+
 
 .title {
     font-size: 2.5em;
