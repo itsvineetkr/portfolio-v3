@@ -83,6 +83,9 @@ theme.forEach(button => {
             document.documentElement.style.setProperty('--link-color', 'white');
             document.documentElement.style.setProperty('--border-color', '#776e62');
             document.documentElement.style.setProperty('--about-color', 'hsla(0, 0%, 100%, 0.274)');
+            document.documentElement.style.setProperty('--dots-color', 'rgba(255, 255, 255, 0.09)');
+
+
         } else {
             theme.forEach(button => {
                 button.innerHTML = "light";    
@@ -92,6 +95,7 @@ theme.forEach(button => {
             document.documentElement.style.setProperty('--link-color', 'black');
             document.documentElement.style.setProperty('--border-color', 'black');
             document.documentElement.style.setProperty('--about-color', 'hsla(0, 0%, 0%, 0.274)');
+            document.documentElement.style.setProperty('--dots-color', 'rgba(0, 0, 0, 0.1)');
         }
     });
 });

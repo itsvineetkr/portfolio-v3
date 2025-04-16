@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&display=swap');
 
 @font-face {
-  font-family: "Custom";
-  src: url("fonts/1.otf") format("truetype");
+    font-family: "Custom";
+    src: url("fonts/1.otf") format("truetype");
 }
 
 
@@ -12,15 +12,16 @@
     --link-color: black;
     --border-color: black;
     --about-color: hsla(0, 0%, 0%, 0.274);
+    --dots-color: rgba(0, 0, 0, 0.1);
 }
 
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  user-select: none;
-  -webkit-user-select: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 html {
@@ -29,7 +30,7 @@ html {
     -moz-osx-font-smoothing: grayscale;
 }
 
-body{
+body {
     font-family: "Hedvig Letters Serif", serif;
     letter-spacing: -.04em;
     line-height: 1.25;
@@ -38,18 +39,31 @@ body{
     color: var(--text-color);
 }
 
-body a{
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: radial-gradient(circle, var(--dots-color) 1px, transparent 1px);
+    background-size: 20px 20px;
+    z-index: -1;
+}
+
+body a {
     color: var(--link-color);
 }
 
 
-header{
+header {
     position: fixed;
     top: 0;
     z-index: 100;
 }
 
-nav{
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -59,18 +73,18 @@ nav{
     opacity: 0;
 }
 
-nav a{
+nav a {
     text-decoration: none;
 }
 
-nav ul{
+nav ul {
     display: flex;
     justify-content: center;
     align-items: center;
     list-style: none;
 }
 
-nav ul li a{
+nav ul li a {
     text-decoration: none;
     padding: 0 0 0 5px;
 }
@@ -81,7 +95,7 @@ nav ul li a{
     }
 } */
 
-.homepage{
+.homepage {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -89,7 +103,7 @@ nav ul li a{
     height: 100svh;
 }
 
-.homepage .homepage-content{
+.homepage .homepage-content {
     flex: 1;
     display: flex;
     justify-content: center;
@@ -97,7 +111,7 @@ nav ul li a{
     width: 100vw;
 }
 
-.homepage-content ul{
+.homepage-content ul {
     display: none;
     list-style: none;
     font-size: 1.6em;
@@ -105,16 +119,16 @@ nav ul li a{
     transform: translateX(-150px);
 }
 
-.homepage-content ul a{
+.homepage-content ul a {
     text-decoration: underline;
-}    
+}
 
-.homepage .title-name{
+.homepage .title-name {
     font-family: "Custom";
     font-size: 200px;
 }
 
-.homepage-footer{
+.homepage-footer {
     flex: 0 0 auto;
     display: flex;
     justify-content: space-between;
@@ -124,11 +138,11 @@ nav ul li a{
     font-size: 1.3em;
 }
 
-.homepage-footer .right{
+.homepage-footer .right {
     text-align: right;
 }
 
-.homepage-footer ul{
+.homepage-footer ul {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -136,28 +150,28 @@ nav ul li a{
     padding-right: 40px;
 }
 
-.homepage-footer ul li a{
+.homepage-footer ul li a {
     text-decoration: underline;
     padding: 0 0 0 5px;
 }
 
-@media (max-width:1500px){
-    .homepage-footer ul{
+@media (max-width:1500px) {
+    .homepage-footer ul {
         display: none;
     }
-    
-    .homepage-content ul{
+
+    .homepage-content ul {
         display: block;
     }
 
-    .homepage-content .title-name{
+    .homepage-content .title-name {
         font-size: 80px;
         text-wrap: nowrap;
         rotate: -90deg;
     }
 }
 
-.title{
+.title {
     font-size: 2.5em;
     font-weight: bold;
     padding-left: 40px;
@@ -166,7 +180,7 @@ nav ul li a{
     padding-top: 100px;
 }
 
-.about{
+.about {
     height: 100svh;
     display: flex;
     justify-content: center;
@@ -175,14 +189,14 @@ nav ul li a{
     width: 100vw;
 }
 
-.about p{
+.about p {
     max-width: 100vw;
     width: 900px;
     font-size: 1.6em;
     padding: 40px;
 }
 
-.about p span{
+.about p span {
     color: var(--about-color);
     background-clip: text;
     background-repeat: no-repeat;
@@ -190,13 +204,13 @@ nav ul li a{
     background-image: linear-gradient(90deg, var(--text-color), var(--text-color));
 }
 
-@media (max-width: 1000px){
-    .about p{
+@media (max-width: 1000px) {
+    .about p {
         font-size: 1.4em;
     }
 }
 
-.projects{
+.projects {
     display: flex;
     overflow-x: hidden;
     justify-content: center;
@@ -207,7 +221,7 @@ nav ul li a{
     padding-bottom: 100px;
 }
 
-.projects-container{
+.projects-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -219,7 +233,7 @@ nav ul li a{
     border: 1px dashed var(--border-color);
 }
 
-.projects-container img{
+.projects-container img {
     width: 400px;
     max-width: 85vw;
     border-radius: 15px;
@@ -228,7 +242,7 @@ nav ul li a{
     z-index: 0;
 }
 
-.projects-container .text{
+.projects-container .text {
     height: 100%;
     display: flex;
     justify-content: flex-start;
@@ -238,43 +252,43 @@ nav ul li a{
 
 }
 
-.projects-container .text .heading{
+.projects-container .text .heading {
     font-size: 1.5em;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-.projects-container .text .description{
+.projects-container .text .description {
     font-size: 1em;
     margin-bottom: 10px;
 }
 
-.projects-container .text .tech{
+.projects-container .text .tech {
     font-size: 1em;
     margin-bottom: 10px;
 }
 
-.projects-container .text .tech span{
+.projects-container .text .tech span {
     font-weight: bold;
 }
 
-.projects-container .text .links a{
+.projects-container .text .links a {
     font-size: 1em;
     text-decoration: underline;
 }
 
-@media (max-width: 1000px){
-    .projects-container{
+@media (max-width: 1000px) {
+    .projects-container {
         flex-direction: column;
     }
 
-    .projects-container img{
+    .projects-container img {
         width: 90vw;
         margin-top: 20px;
     }
 }
 
-.mail{
+.mail {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -283,20 +297,20 @@ nav ul li a{
     padding: 100px 50px 50px 50px;
 }
 
-.mail p{
+.mail p {
     font-size: 1.6em;
     width: 600px;
     max-width: 90vw;
     text-align: justify;
 }
 
-.mail a{
+.mail a {
     font-size: 2.3em;
     padding: 20px;
     text-decoration: underline;
 }
 
-.contact{
+.contact {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -304,7 +318,7 @@ nav ul li a{
     height: 100svh;
 }
 
-.contact .contact-content{
+.contact .contact-content {
     flex: 1;
     width: 100vw;
 
@@ -314,16 +328,16 @@ nav ul li a{
 }
 
 
-.contact .contact-content ul{
+.contact .contact-content ul {
     display: none;
 }
 
-.contact .title-name{
+.contact .title-name {
     font-family: "Custom";
     font-size: 200px;
 }
 
-.contact-footer{
+.contact-footer {
     flex: 0 0 auto;
     display: flex;
     justify-content: space-between;
@@ -333,11 +347,11 @@ nav ul li a{
     font-size: 1.3em;
 }
 
-.contact-footer .right{
+.contact-footer .right {
     text-align: right;
 }
 
-.contact-footer ul{
+.contact-footer ul {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -345,24 +359,24 @@ nav ul li a{
     padding-right: 40px;
 }
 
-.contact-footer ul li a{
+.contact-footer ul li a {
     text-decoration: underline;
     padding: 0 0 0 5px;
 }
 
 
-@media (max-width:1500px){
-    .contact-footer ul{
+@media (max-width:1500px) {
+    .contact-footer ul {
         display: none;
     }
-    
-    .contact-content .title-name{
+
+    .contact-content .title-name {
         font-size: 80px;
         text-wrap: nowrap;
         rotate: -90deg;
     }
 
-    .contact .contact-content ul{
+    .contact .contact-content ul {
         display: block;
         list-style: none;
         font-size: 1.6em;
@@ -370,21 +384,21 @@ nav ul li a{
         transform: translateX(-150px);
     }
 
-    .contact .contact-content ul a{
+    .contact .contact-content ul a {
         text-decoration: underline;
-    }    
+    }
 
-    .contact-footer{
+    .contact-footer {
         font-size: 0.9em;
     }
 
-    .mail p{
+    .mail p {
         font-size: 1.2em;
         text-align: justify;
         width: 80vw;
     }
-    
-    .mail a{
+
+    .mail a {
         font-size: 1.6em;
         padding: 20px;
 
