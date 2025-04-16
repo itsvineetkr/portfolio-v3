@@ -309,7 +309,7 @@ nav ul li a {
     font-size: 1.6em;
     width: 600px;
     max-width: 90vw;
-    text-align: justify;
+    text-align: center;
 }
 
 .mail a {
@@ -372,13 +372,20 @@ nav ul li a {
     padding: 0 0 0 5px;
 }
 
+@media (max-width:1300px) {
+    .contact .contact-content .title-name {
+        font-size: 150px;
+        text-wrap: nowrap;
+    }
+}
 
-@media (max-width:1500px) {
+
+@media (max-width:1000px) {
     .contact-footer ul {
         display: none;
     }
 
-    .contact-content .title-name {
+    .contact .contact-content .title-name {
         font-size: 80px;
         text-wrap: nowrap;
         rotate: -90deg;
@@ -402,7 +409,7 @@ nav ul li a {
 
     .mail p {
         font-size: 1.2em;
-        text-align: justify;
+        text-align: center;
         width: 80vw;
     }
 
