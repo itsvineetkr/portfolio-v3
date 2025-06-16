@@ -96,7 +96,8 @@ nav ul li a {
 
 @media (max-width: 1286px) {
     nav {
-        width: 90vw;
+        width: 85vw;
+        font-size: 16px;
         margin: 20px 5vw;
     }
 }
