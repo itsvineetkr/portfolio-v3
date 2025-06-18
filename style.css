@@ -13,6 +13,11 @@
     --border-color: black;
     --about-color: hsla(0, 0%, 0%, 0.274);
     --dots-color: rgba(0, 0, 0, 0.1);
+    --exp-job-desc: #555;
+    --exp-job-title: #333;
+    --exp-company: #474b62;
+    --exp-timeline-bg: #333;
+    --exp-timeline-color: white;
 }
 
 
@@ -75,7 +80,7 @@ nav {
     background-color: #ffffff2e;
     border-radius: 13px;
     margin: 20px 15vw;
-    border: rgba(0, 0, 0, 0.538) 1px dashed;
+    border: var(--border-color) 1px dashed;
 }
 
 nav a {
@@ -96,9 +101,9 @@ nav ul li a {
 
 @media (max-width: 1286px) {
     nav {
-        width: 85vw;
+        width: 84vw;
         font-size: 16px;
-        margin: 20px 5vw;
+        margin: 20px 8vw;
     }
 }
 
@@ -426,4 +431,95 @@ nav ul li a {
 
         text-decoration: underline;
     }
+}
+
+
+.experience .experience-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+.experience .timeline {
+    position: relative;
+    padding-left: 60px;
+    margin-top: 60px;
+}
+
+.experience .timeline::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--exp-timeline-bg);
+}
+
+.experience .timeline-item {
+    position: relative;
+    margin-bottom: 80px;
+}
+
+.experience .timeline-circle {
+    position: absolute;
+    left: -60px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--exp-timeline-bg);
+    color: var(--exp-timeline-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.experience .timeline-content {
+    padding-left: 20px;
+}
+
+.experience .job-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--exp-job-title);
+    margin-bottom: 5px;
+    display: flex;
+    
+    align-items: center;
+    gap: 15px;
+}
+
+.experience .company {
+    font-size: 18px;
+    color: var(--exp-company);
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.experience .job-description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--exp-job-desc);
+    margin-top: 10px;
+}
+
+@media (max-width: 1000px) {
+    .experience .experience-container {
+        overflow-x: hidden;
+    }
+    .experience .job-title {
+        font-size: 24px;
+    }
+
+    .experience .company {
+        font-size: 16px;
+    }
+
+    .experience .job-description {
+        font-size: 16px;
+    }
+    
 }

@@ -85,6 +85,12 @@ theme.forEach(button => {
             document.documentElement.style.setProperty('--about-color', 'hsla(0, 0%, 100%, 0.274)');
             document.documentElement.style.setProperty('--dots-color', 'rgba(255, 255, 255, 0.09)');
 
+            document.documentElement.style.setProperty('--exp-job-desc', '#b0b0b0');
+            document.documentElement.style.setProperty('--exp-job-title', '#efefef');
+            document.documentElement.style.setProperty('--exp-company', '#bcc4f3');
+            document.documentElement.style.setProperty('--exp-timeline-bg', '#555');
+            document.documentElement.style.setProperty('--exp-timeline-color', '#ffffff');
+
 
         } else {
             theme.forEach(button => {
@@ -96,6 +102,14 @@ theme.forEach(button => {
             document.documentElement.style.setProperty('--border-color', 'black');
             document.documentElement.style.setProperty('--about-color', 'hsla(0, 0%, 0%, 0.274)');
             document.documentElement.style.setProperty('--dots-color', 'rgba(0, 0, 0, 0.1)');
+
+            
+
+            document.documentElement.style.setProperty('--exp-job-desc', '#555');
+            document.documentElement.style.setProperty('--exp-job-title', '#333');
+            document.documentElement.style.setProperty('--exp-company', '#474b62');
+            document.documentElement.style.setProperty('--exp-timeline-bg', '#333');
+            document.documentElement.style.setProperty('--exp-timeline-color', 'white');
         }
     });
 });
