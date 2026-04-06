@@ -33,30 +33,31 @@ html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden; /* FIX: prevent horizontal scroll at root */
 }
 
 body {
     font-family: "Hedvig Letters Serif", serif;
     letter-spacing: -.04em;
     line-height: 1.25;
-    overflow-x: hidden;
+    overflow-x: hidden; /* FIX: belt-and-suspenders overflow clamp */
     background-color: var(--background-color);
     color: var(--text-color);
-    max-width: 100vw;
+    max-width: 100%; /* FIX: was 100vw which includes scrollbar width */
 }
 
 body::before {
-    max-width: 100vw;
     content: "";
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100%;  /* FIX: was 100vw */
     height: 100%;
     pointer-events: none;
     background-image: radial-gradient(circle, var(--dots-color) 1px, transparent 1px);
     background-size: 20px 20px;
     z-index: -1;
+    max-width: 100%; /* FIX: clamp dot bg */
 }
 
 body a {
@@ -115,7 +116,9 @@ nav ul li a {
     align-items: center;
     flex-direction: column;
     height: 100svh;
-    max-width: 100vw;
+    width: 100%; /* FIX: was 100vw */
+    max-width: 100%; /* FIX */
+    overflow: hidden; /* FIX: clip anything that bleeds */
 }
 
 .homepage .homepage-content {
@@ -123,8 +126,8 @@ nav ul li a {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    max-width: 100vw;
+    width: 100%; /* FIX: was 100vw */
+    max-width: 100%; /* FIX */
 }
 
 .homepage-content ul {
@@ -132,7 +135,7 @@ nav ul li a {
     list-style: none;
     font-size: 1.6em;
     padding: 30px 0 30px 30px;
-    transform: translateX(0px);
+    transform: translateX(-150px);
 }
 
 .homepage-content ul a {
@@ -149,7 +152,7 @@ nav ul li a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100vw;
+    width: 100%; /* FIX: was 100vw */
     padding: 15px 30px;
     font-size: 1.3em;
 }
@@ -184,7 +187,7 @@ nav ul li a {
     }
 
     .homepage-content ul {
-        display: none;
+        display: block;
     }
 
     .homepage-content .title-name {
@@ -199,7 +202,7 @@ nav ul li a {
     font-size: 2.5em;
     font-weight: bold;
     padding-left: 40px;
-    max-width: 100vw;
+    max-width: 100%; /* FIX: was 100vw */
     width: 900px;
     padding-top: 100px;
 }
@@ -210,11 +213,11 @@ nav ul li a {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 100vw;
+    width: 100%; /* FIX: was 100vw */
 }
 
 .about p {
-    max-width: 100vw;
+    max-width: 100%; /* FIX: was 100vw */
     width: 900px;
     font-size: 1.6em;
     padding: 40px;
@@ -240,8 +243,8 @@ nav ul li a {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 100vw;
-    max-width: 100vw;
+    width: 100%; /* FIX: was 100vw */
+    max-width: 100%; /* FIX */
     padding-bottom: 100px;
 }
 
@@ -318,7 +321,7 @@ nav ul li a {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 100vw;
+    width: 100%; /* FIX: was 100vw */
     padding: 100px 50px 50px 50px;
 }
 
@@ -341,11 +344,12 @@ nav ul li a {
     align-items: center;
     flex-direction: column;
     height: 100svh;
+    overflow: hidden; /* FIX: clip bleed from rotated title */
 }
 
 .contact .contact-content {
     flex: 1;
-    width: 100vw;
+    width: 100%; /* FIX: was 100vw */
 
     display: flex;
     justify-content: center;
@@ -367,7 +371,7 @@ nav ul li a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100vw;
+    width: 100%; /* FIX: was 100vw */
     padding: 15px 30px;
     font-size: 1.3em;
 }
