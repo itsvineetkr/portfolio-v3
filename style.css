@@ -27,7 +27,6 @@
     box-sizing: border-box;
     user-select: none;
     -webkit-user-select: none;
-    max-width: 100vw;
 }
 
 html {
@@ -114,6 +113,7 @@ nav ul li a {
     align-items: center;
     flex-direction: column;
     height: 100svh;
+    max-width: 100vw;
 }
 
 .homepage .homepage-content {
